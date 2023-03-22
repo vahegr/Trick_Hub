@@ -1,0 +1,129 @@
+@font-face {
+    font-family: "iranyekan";
+    src: url("../font/Yekan.woff") format(woff);
+}
+
+body {
+    font-family: iranyekan;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background-color: #ffc107;
+}
+
+.aboutus {
+    padding-top: 150px;
+}
+
+.icon {
+    font-size: 80px;
+}
+
+.padding {
+    padding-bottom: 150px;
+}
+
+.image {
+    width: 250px;
+}
+
+.configservice {
+    background-color: #007db3;
+}
+
+.personalsite {
+    background-color: #ff930d;
+}
+
+.companysite {
+    background-color: #9757f6;
+}
+
+.storesite {
+    background-color: #08e7ba;
+}
+
+ul {
+    padding: 10px;
+}
+
+.navbar {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+a {
+    cursor: pointer;
+}
+
+.map {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+.coloredtext {
+    background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.needwebsite {
+    background: #2d2d44;
+}
+
+.arrow {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    order: 100;
+}
+
+.footer {
+    background-image: url("../image/footer-wave.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.instagram {
+    font-size: 70px;
+}
+
+.instagram:hover {
+    background: #f09433;
+    background: -moz-linear-gradient( 45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient( 45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient( 45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+}
+
+.iran {
+    width: 40px;
+}
+
+.teamname {
+    color: #f09433;
+}
+
+.footersmalltext {
+    width: 500px;
+}
+
+.developer {
+    border-radius: 50%;
+    height: 300px;
+}
