@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # app's
+    'home.apps.HomeConfig',
     'articles.apps.ArticlesConfig',
     'account.apps.AccountConfig',
     'about.apps.AboutConfig',
@@ -46,6 +47,11 @@ INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'plans.apps.PlansConfig',
     'samples.apps.SamplesConfig',
+
+    # installed packages
+    'django_jalali',
+    'django_extensions',
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +141,4 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'account.User'

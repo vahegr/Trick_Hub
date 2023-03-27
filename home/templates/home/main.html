@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Tip Hub | صفحه ی اصلی
+{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body>
+{% block content %}
+    <div class="p-4 d-flex justify-content-center">
+        <img src="{% static 'image/main-img.png' %}" alt="main page image" title="main page image in header" class="img-fluid d-sm-block d-md-none mt-5 mx-auto text-center w-50">
+    </div>
+    <div class="container d-flex justify-content-around padding mb-sm-3">
+        <img src="{% static 'image/main-img.png' %}" class="main-img my-5 d-none d-md-block d-sm-none w-25 img-fluid" alt="main img">
+        <div class="text-end mt-5">
+            <h3>طراحی تخصصی وب سایت</h3>
+            <p class="text-info text-justify ">طراحی وبسایت خود را به افراد متخصص بسپارید</p>
+            <p class="">این روز ها طراحی وبسایت از مهم ترین اجزائ هر کسب و کار و برندی است تیم تریک هاب مایل است تا با تکنولوژی های روز دنیا شما را در این راه همراهی کند</p>
+            <a class="btn rounded-pill text-white mt-sm-3 mt-md-5 seeservicesbtn text-decoration-none" href="#services" title="go to ourservices">مشاهده
+                خدمات</a>
+        </div>
+    </div>
+
+
+
+    <h4 class="text-center mb-4">خدمات طراحی وبسایت</h4>
+    <div class="maintext">
+        <p class="text-center text-secondary text-justify text-wrap w-50 mx-auto">برای کسب و کار خودتان یک سایت با کیفیت عالی طراحی کنید. مهم نیست برای چه کاری نیاز به یک وب سایت دارید معرفی کسب و کار خودتان، نمایش نمونه کارهایتان یا فروش آنلاین محصولات خودتان. با تریک هاب می توانید برای هر کاری یک سایت عالی داشته باشید</p>
+    </div>
+    <div class="container text-center text-wrap mt-5">
+        <div class="row d-flex justify-content-between">
+            <div class="col-md-4 col-sm-12 bg-warning rounded-5 p-4 mb-3">
+                <i class='bx bx-timer serviceicon pb-2'></i>
+                <p>سئو</p>
+                <small class="text-secondary servicetext text-justify flex-sm-wrap">طراحی وبسایت ها به گونه ای است سرعت
+                    سایت
+                    بالا
+                    باشد و کاربر
+                    تجربه
+                    لذت
+                    بخشی
+                    از استفاده
+                    از سایت داشته باشد</small>
+            </div>
+
+            <div class="col-md-4 col-sm-12 bg-warning rounded-5 p-4 mb-3">
+                <i class='bx bx-mobile-alt serviceicon pb-2'></i>
+                <p>کاملا ریسپانسیو</p>
+                <small class="text-secondary servicetext">قالب های طراحی شده کاملا ریسپانسیو هستند و برای موبایل ، تبلت
+                    و
+                    لپ تاپ
+                    بهینه شده
+                    اند</small>
+            </div>
+
+            <div class="col-md-4 col-sm-12 bg-warning rounded-5 p-4 mb-2">
+                <i class='bx bxs-eyedropper serviceicon pb-2'></i>
+                <p>طراحی جذاب</p>
+                <small class="text-secondary servicetext">قالب های تریک هاب توسط افراد متخصص این زمینه طراحی شده تا
+                    ظاهری
+                    زیبا
+                    و
+                    کاربر پسند را
+                    ایجاد کند
+                </small>
+            </div>
+        </div>
+
+        <div class="row mt-2 d-flex justify-content-between" dir="rtl">
+            <div class="text-center bg-warning col-md-4 col-lg-4 col-sm-12 rounded-5 p-4 mb-3">
+                <i class='bx bx-time-five serviceicon'></i>
+                <p>زمان تحویل</p>
+                <small class="text-secondary servicetext">تلاش تریک هاب بر این است تا در سریع ترین زمان ممکن وبسایت
+                    را
+                    طراحی و
+                    به
+                    مشتری
+                    عزیز
+                    تحویل
+                    داده شود
+                </small>
+            </div>
+
+            <div class="col-md-8 col-lg-8 col-sm-12 rounded-5 freehost p-5 d-flex justify-content-between mb-sm-2" dir="ltr">
+                <i class='bx bx-world freeserviceicon text-start '></i>
+                <div class="text-end">
+                    <h5 class="text-white text-wrap text-justify">هاست و دامنه رایگان با استفاده از خدمات ما</h5>
+                    <p class="text-white text-wrap text-justify">
+                        با سفارش طراحی وب سایت شخصی از تیم تریک هاب ، دامنه رایگان دریافت کنید
+                    </p><br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="services">
+        <h4 class="text-center mt-5">وبسایت مد نظر شما چیست ؟</h4>
+        <p class="text-center text-secondary mt-2">پلن های استثنائی طراحی وب</p>
+        <div class="container" dir="rtl">
+            <div class="row d-flex justify-content-center">
+
+                {% for item in results %}
+                <div class="col-md-4 col-sm-12 rounded-3 bg-primary planbox p-4 m-3 storeshop plan">
+                    <h3 class="text-white">{{ item.title }}</h3>
+                    <p class="text-secondary text-light">{{ item.development_tool }}</p>
+                    <h2 class="text-light">
+                        <span class="text-light h5 mx-2">شروع از</span>{{ item.price }}
+                        <span class="text-light h5 mx-2">تومان</span>
+                    </h2>
+                    <ul class="list-unstyled text-light">
+                        <li>{{ item.feature }}</li>
+
+                        <li>و...</li>
+                    </ul>
+
+                </div>
+                {% endfor %}
+                <div class="col-md-4 col-sm-12 rounded-3 bg-primary planbox p-4 m-3 storeshop plan">
+                    <h3 class="text-white">وبسایت فروشگاهی</h3>
+                    <p class="text-secondary text-light">توسط WordPress</p>
+                    <h2 class="text-light">
+                        <span class="text-light h5 mx-2">شروع از</span> 9.000.000
+                        <span class="text-light h5 mx-2">تومان</span>
+                    </h2>
+                    <ul class="list-unstyled text-light">
+                        <li>وبسایت امن</li>
+                        <li>سرعت بالا</li>
+                        <li>شخصی سازی شده</li>
+                        <li>سازگاری کامل با موبایل و تبلت</li>
+                        <li>دامنه رایگان</li>
+                        <li>دارای پشتیبانی</li>
+                        <li>طراحی با استفاده از CMS قدرتمند WordPress</li>
+                        <li>فضای هاست رایگان</li>
+                        <li>صفحه مقاله</li>
+                        <li>ساخت و ویرایش مقاله(نامحدود)</li>
+                        <li>صفحه خدمات</li>
+                        <li>صفحه محصولات</li>
+                        <li>تعریف محصولات به تعداد نامحدود</li>
+                        <li>سبد خرید</li>
+                        <li>و...</li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+
+
+
+    <div class="pt-5 container text-center">
+        <h3 class="pb-3">طراحی حرفه ای وب سایت</h3>
+        <p class="text-secondary text-justify w-50 pb-5 text-center m-auto">تیم تریک هاب با استفاده از یکی از قدرتمندترین زبان های برنامه نویسی یعنی پایتون و تحت فریم ورک جنگو وبسایت ها را طراحی می کند ، زیرا وبسایت هایی که تحت فریم ورک جنگو ساخته میشوند از معماری MVT استفاده میکنند و همچنین امنیت و سرعت سایت را نسبت
+            به CMS هایی مثل وردپرس و جوملا بسیار بالا میبرد. تلاش ما این است بهینه ترین وبسایت ها را طبق تکنولوژی حال حاضر طراحی کنیم.
+        </p>
+    </div>
+
+    <div class="map w-100 d-flex justify-content-center mb-0">
+        <img class="img-fluid py-4" src="{% static 'image/map.png' %}" alt="world map" title="world map">
+    </div>
+
+    <div class="text-center pb-5 pt-3 world">
+        <div class="container">
+            <h3 class="text-white pb-2">در هرکجای این کره ی خاکی</h3>
+            <h5 class="text-light">با داشتن وبسایت خیالتان از همه بابت راحت است ، مشتریان شما در هر کجای این کره خاکی میتوانند به صورت ۲۴ ساعته به وبسایت شما دسترسی داشته باشند و از وبسایت شما استفاده کنند</h5>
+        </div>
+    </div>
+{% endblock %}
+</body>
+
+</html>
