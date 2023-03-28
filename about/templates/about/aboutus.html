@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block description %}
+    <meta name="description" content="طراحی تخصصی انواع وب سایت برای همه مشاغل و شرکت ها توسط تیم تریک هاب">
+    <meta name="keywords" content="طراحی سایت, طراحی وب سایت , وب سایت , راه اندازی وب سایت , وب سیات تخصصی , فرانت اند , بک اند , وردپرس , طراحی سایت وردپرسی , وب سایت وردپرسی , دیزاین وب سایت , تریک هاب , trick hub"/>
+{% endblock %}
+{% block title %}
+    Trick Hub | درباره ما
+{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<body>
+{% block content %}
+
+    <div class="container">
+        <div class="d-flex justify-content-around aboutus mb-5">
+            <img src="{% static 'image/fovicon.png' %}" class="image img-fluid" alt="trickhub logo" title="trickhub logo">
+            <h3 class="text-center d-flex align-self-center"><b>درباره ی تیم تریک هاب</b></h3>
+        </div>
+
+        <div class="text-end">
+            <h2 class="text-dark mb-4">چرا تیم تریک هاب ؟</h2>
+            <p class="text-secondary text-justify">
+                طراحی وبسایت نیاز به دانش تخصصی دارد زیرا کوچک ترین جزئیات در سرعت وبسایت و هم چنین امنیت وبسایت که دو رکن اصلی طراحی هر وبسایت هستند تاثیر گذارند. تیم تریک هاب حاوی برنامه نویسانی مشتاق و خلاق و همچنین متخصص است که در راستای طراحی وبسایت فعالیت میکند
+            </p>
+        </div>
+
+        <div class="d-flex justify-content-between padding mt-5" dir="rtl">
+            <img src="{% static 'image/groupofworks.jpg' %}" alt="groupworks image" title="groupworks image" class="w-50 img-fluid">
+            <div class="text-end align-self-center">
+                <h2>طراحی وب سایت چیست؟</h2>
+                <p class="text-secondary w-75">طراحی سایت یا وب دیزاین Web-Design به مراحل طراحی و ساخت یک پایگاه اینترنتی جهت اطلاع‌رسانی، معرفی شرکت و ارائه محصولات آن گفته می‌شود. طراحی وب‌ سایت یک پروسه است که از لایه‌سازی صفحات وب، تولید محتوا، طراحی گرافیکی و رعایت اصول سئو تشکیل
+                    شده است.
+                </p>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-around mb-5 padding">
+            <img src="{% static 'image/developers.svg' %}" alt="developers image" title="developers image" class="w-50 img-fluid">
+            <div class="text-end align-self-center">
+                <h2>وظایف طراح وبسایت چیست ؟</h2>
+                <p class="text-secondary">وظایف یک طراح سایت به این بستگی دارد که مسئولیت طراحی و ساخت کدام قسمت سایت را بر عهده دارد. برای راه‌اندازی یک سایت حرفه‌ای، به دو تیم یا دو شخص نیاز است. یک تیم برای طراحی شکل و ظاهر سایت و یک تیم برای طراحی کدهای سرور و کدهایی که برای
+                    کاربران قابل دیدن نیستند. تیم زد کد هم ظاهر و هم باطن وبسایت را طراحی میکند.</p>
+            </div>
+        </div>
+
+
+        <div class="mb-5 padding">
+            <h4 class="text-center mb-5">اطلاعات بیشتر درباره تریک هاب</h4>
+            <div class="row">
+                <div class="rounded-4 text-center col-md-4">
+                    <i class="bi bi-hourglass-split icon text-primary"></i>
+                    <h5>زمان تحویل کار</h5>
+                    <p class="text-secondary text-center w-75 mx-auto">زمان تحویل کار بسته به پروژه کاملا متغییر است ، برنامه نویسان تلاش میکنند تا در سریع ترین زمان ممکن پروژه ها را تکمیل کنند.</p>
+                </div>
+                <div class="rounded-4 text-center col-md-4 mt-4">
+                    <i class='bx bxl-python icon text-primary'></i>
+                    <h5>زبان طراحی وبسایت</h5>
+                    <p class="text-secondary text-center w-75 mx-auto">تلاش تریک هاب بر این است تا وبسایت ها با فریمورک جنگو ساخته شوند زیرا امنیت و سرعت بالاتری نسبت به بقیه زبان ها دارند اما با درخواست کارفرما ، زبان مد نظر را برای طراحی وبسایت استفاده خواهیم کرد
+                    </p>
+                </div>
+                <div class="rounded-4 text-center col-md-4">
+                    <i class="bi bi-people icon text-primary"></i>
+                    <h5>تیم تریک هاب</h5>
+                    <p class="text-secondary text-center w-75 mx-auto">تیم تریک هاب متشکل از برنامه نویسانی علاقمند به طراحی وب است ؛ تلاش ما بر این است تا با کیفیت ترین وبسایت ها را به کاربران عزیز ارائه دهیم</p>
+                </div>
+            </div>
+        </div>
+        <h4 class="text-center">توسعه دهندگان تیم</h4>
+        <div class="text-center mb-5 mt-5 row">
+            {% for user in developers %}
+            <div class="col-md-6">
+                <img src="{{ user.image.url }}" alt="developer" class="developer w-55">
+                <h5 class="pt-3">{{ user.full_name }}</h5>
+                <p>{{ user.bio}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+</body>
+</html>

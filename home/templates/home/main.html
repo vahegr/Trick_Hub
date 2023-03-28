@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block description %}
+    <meta name="description" content="طراحی تخصصی انواع وب سایت برای همه مشاغل و شرکت ها توسط تیم تریک هاب">
+    <meta name="keywords" content="طراحی سایت, طراحی وب سایت , وب سایت , راه اندازی وب سایت , وب سیات تخصصی , فرانت اند , بک اند , وردپرس , طراحی سایت وردپرسی , وب سایت وردپرسی , دیزاین وب سایت , تریک هاب , trick hub"/>
+{% endblock %}
 {% block title %}
-    Tip Hub | صفحه ی اصلی
+    Trick Hub | صفحه ی اصلی
 {% endblock %}
 <!DOCTYPE html>
 <html lang="en">
@@ -9,26 +13,31 @@
 
 <body>
 {% block content %}
+    <div style="background-size:cover; background-image: url('{% static 'image/Wave.svg' %}'); width: 100%;">
     <div class="p-4 d-flex justify-content-center">
         <img src="{% static 'image/main-img.png' %}" alt="main page image" title="main page image in header" class="img-fluid d-sm-block d-md-none mt-5 mx-auto text-center w-50">
     </div>
     <div class="container d-flex justify-content-around padding mb-sm-3">
         <img src="{% static 'image/main-img.png' %}" class="main-img my-5 d-none d-md-block d-sm-none w-25 img-fluid" alt="main img">
         <div class="text-end mt-5">
-            <h3>طراحی تخصصی وب سایت</h3>
+            <h3 style="color: white">طراحی تخصصی وب سایت</h3>
             <p class="text-info text-justify ">طراحی وبسایت خود را به افراد متخصص بسپارید</p>
-            <p class="">این روز ها طراحی وبسایت از مهم ترین اجزائ هر کسب و کار و برندی است تیم تریک هاب مایل است تا با تکنولوژی های روز دنیا شما را در این راه همراهی کند</p>
-            <a class="btn rounded-pill text-white mt-sm-3 mt-md-5 seeservicesbtn text-decoration-none" href="#services" title="go to ourservices">مشاهده
+            <p style="color: white" class="">این روز ها طراحی وبسایت از مهم ترین اجزائ هر کسب و کار و برندی است تیم تریک هاب مایل است تا با تکنولوژی های روز دنیا شما را در این راه همراهی کند</p>
+            <a class="btn rounded-pill text-white mt-sm-3 mt-md-5 seeservicesbtn text-decoration-none" href="{% url 'services:services' %}" title="go to ourservices">مشاهده
                 خدمات</a>
         </div>
     </div>
+    </div>
+    <br>
 
 
 
-    <h4 class="text-center mb-4">خدمات طراحی وبسایت</h4>
-    <div class="maintext">
+
+    <div class="">
+        <h4 class="text-center mb-4">خدمات طراحی وبسایت</h4>
         <p class="text-center text-secondary text-justify text-wrap w-50 mx-auto">برای کسب و کار خودتان یک سایت با کیفیت عالی طراحی کنید. مهم نیست برای چه کاری نیاز به یک وب سایت دارید معرفی کسب و کار خودتان، نمایش نمونه کارهایتان یا فروش آنلاین محصولات خودتان. با تریک هاب می توانید برای هر کاری یک سایت عالی داشته باشید</p>
     </div>
+
     <div class="container text-center text-wrap mt-5">
         <div class="row d-flex justify-content-between">
             <div class="col-md-4 col-sm-12 bg-warning rounded-5 p-4 mb-3">
@@ -102,7 +111,7 @@
         <div class="container" dir="rtl">
             <div class="row d-flex justify-content-center">
 
-                {% for item in results %}
+                {% for item in exclusive_plans %}
                 <div class="col-md-4 col-sm-12 rounded-3 bg-primary planbox p-4 m-3 storeshop plan">
                     <h3 class="text-white">{{ item.title }}</h3>
                     <p class="text-secondary text-light">{{ item.development_tool }}</p>
@@ -111,38 +120,34 @@
                         <span class="text-light h5 mx-2">تومان</span>
                     </h2>
                     <ul class="list-unstyled text-light">
-                        <li>{{ item.feature }}</li>
+                        {% for fet in item.feature.all %}
+                        <li>{{ fet.title }}</li>
+                        {% endfor %}
 
                         <li>و...</li>
                     </ul>
 
                 </div>
                 {% endfor %}
-                <div class="col-md-4 col-sm-12 rounded-3 bg-primary planbox p-4 m-3 storeshop plan">
-                    <h3 class="text-white">وبسایت فروشگاهی</h3>
-                    <p class="text-secondary text-light">توسط WordPress</p>
-                    <h2 class="text-light">
-                        <span class="text-light h5 mx-2">شروع از</span> 9.000.000
-                        <span class="text-light h5 mx-2">تومان</span>
+
+                {% for item in wordpress_plans %}
+                <div class="col-md-4 col-sm-12 rounded-3 planbox m-3 p-4 plan">
+                    <h3>{{ item.title }}</h3>
+                    <p class="text-secondary">{{ item.development_tool }}</p>
+                    <h2 class="text-success">
+                        <span class="text-secondary h5 mx-2">شروع از</span> {{ item.price }}
+                        <span class="text-secondary h5 mx-2">تومان</span>
                     </h2>
-                    <ul class="list-unstyled text-light">
-                        <li>وبسایت امن</li>
-                        <li>سرعت بالا</li>
-                        <li>شخصی سازی شده</li>
-                        <li>سازگاری کامل با موبایل و تبلت</li>
-                        <li>دامنه رایگان</li>
-                        <li>دارای پشتیبانی</li>
-                        <li>طراحی با استفاده از CMS قدرتمند WordPress</li>
-                        <li>فضای هاست رایگان</li>
-                        <li>صفحه مقاله</li>
-                        <li>ساخت و ویرایش مقاله(نامحدود)</li>
-                        <li>صفحه خدمات</li>
-                        <li>صفحه محصولات</li>
-                        <li>تعریف محصولات به تعداد نامحدود</li>
-                        <li>سبد خرید</li>
+                    <ul class="list-unstyled text-secondary">
+                        {% for fet in item.feature.all %}
+                        <li>{{ fet.title }}</li>
+                        {% endfor %}
+
                         <li>و...</li>
                     </ul>
                 </div>
+                {% endfor %}
+
         </div>
     </div>
 

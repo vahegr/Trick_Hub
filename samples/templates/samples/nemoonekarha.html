@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block description %}
+    <meta name="description" content="طراحی تخصصی انواع وب سایت برای همه مشاغل و شرکت ها توسط تیم تریک هاب">
+    <meta name="keywords" content="طراحی سایت, طراحی وب سایت , وب سایت , راه اندازی وب سایت , وب سیات تخصصی , فرانت اند , بک اند , وردپرس , طراحی سایت وردپرسی , وب سایت وردپرسی , دیزاین وب سایت , تریک هاب , trick hub"/>
+{% endblock %}
+{% block title %}
+    Trick Hub | نمونه کار ها
+{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<body>
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="box d-flex justify-content-center col-md-12 col-sm-12 mb-5 mt-5 kl rounded-5">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <a class="carousel-item active text-center text-decoration-none" href="#">
+                            <img src="{% static 'image/www.jpg' %}" class="image-fluid mb-5" width="400" alt="nemoonekar image">
+                            <h5 class="text-secondary">با نمونه کار های تیم طراحی سایت تریک هاب آشنا شوید
+                            </h5>
+                        </a>
+                        {% for item in object_list %}
+                        <a class="carousel-item text-center text-decoration-none" href="{{ item.url }}">
+                            <img src="{{ item.image.url }}" class="image-fluid mb-5" width="400" alt="nemoonekar image">
+                            <h3>{{ item.title }}</h3>
+                            <h5 class="text-secondary">{{ item.description }}
+                            </h5>
+                        </a>
+                        {% endfor %}
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" onclick="$('#carouselExampleControls').carousel('prev')">
+                        <span class="carousel-control-prev-icon bg-warning rounded-3" aria-hidden="true"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next" onclick="$('#carouselExampleControls').carousel('next')">
+                        <span class="carousel-control-next-icon bg-warning rounded-3" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+</body>
+
+
+</html>

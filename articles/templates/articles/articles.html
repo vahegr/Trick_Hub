@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block description %}
+    <meta name="description" content="طراحی تخصصی انواع وب سایت برای همه مشاغل و شرکت ها توسط تیم تریک هاب">
+    <meta name="keywords" content="طراحی سایت, طراحی وب سایت , وب سایت , راه اندازی وب سایت , وب سیات تخصصی , فرانت اند , بک اند , وردپرس , طراحی سایت وردپرسی , وب سایت وردپرسی , دیزاین وب سایت , تریک هاب , trick hub"/>
+{% endblock %}
+{% block title %}
+    Trick Hub | مقالات
+{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<body>
+{% block content %}
+
+    <div class="container mt-4 mb-4" dir="rtl">
+        <p class="text-secondary">آخرین مقالات</p>
+        {% for item in object_list %}
+        <a class="text-decoration-none text-dark" href="{{ item.get_absolute_url }}" title="go to blog page">
+            <div class="card mb-3 p-4 w-50 rounded-4 article mx-auto" dir="rtl">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ item.image.url }}" class="img-fluid rounded-start" alt="{{ item.title }}" title="{{ item.title }}">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ item.title }}</h3>
+                            <p class="card-text text-secondary">{{ item.description }}
+                            </p>
+                            <p class="card-text"><small class="text-muted"> {{ item.jalali_created }}</small></p>
+                            <p class="card-text"><small class="text-muted"> {{ item.hits.count }} بازدید</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+
+    </div>
+
+{% endblock %}
+</body>
+
+</html>

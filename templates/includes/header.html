@@ -7,7 +7,7 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-5 py-2">
                     <li class="nav-item">
-                        <a class="nav-link active bg-warning rounded-5 px-4" href="main.html" aria-current="page" title="go to main page">صفحه اصلی
+                        <a class="nav-link active bg-warning rounded-5 px-4" href="{% url 'home:home' %}" aria-current="page" title="go to main page">صفحه اصلی
                         </a>
                     </li>
                     <li class="nav-item">
@@ -15,25 +15,25 @@
                             باما</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="aboutus.html" title="go to about us">درباره ی ما</a>
+                        <a class="nav-link" href="{% url 'about:about' %}" title="go to about us">درباره ی ما</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" title="">پشتیبانی</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="articles.html" title="go to blogs">بلاگ</a>
+                        <a class="nav-link" href="{% url 'articles:articles' %}" title="go to blogs">بلاگ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="nemoonekarha.html" title="go to nemoonekar">نمونه
+                        <a class="nav-link" href="{% url 'samples:samples' %}" title="go to nemoonekar">نمونه
                             کارها</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ourservices.html" title="go to ourservices">خدمات ما</a>
+                        <a class="nav-link" href="{% url 'services:services' %}" title="go to ourservices">خدمات ما</a>
                     </li>
                 </ul>
             </div>
             <span class="navbar-text">
-                <a href="main.html" class="d-flex justify-content-end" title="go to main page">
+                <a href="{% url 'home:home' %}" class="d-flex justify-content-end" title="go to main page">
                     <img src="{% static 'image/logo.png' %}" class="w-25 d-sm-block d-md-block d-inline" alt="trickhub logo image"
                         title="trickhub logo image">
                 </a>
